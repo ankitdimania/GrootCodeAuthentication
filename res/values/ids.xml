@@ -1,0 +1,8 @@
+<resources>
+
+    <!-- <item type="layout" name="list_item_login_option"></item> -->
+    <item name="description_sign_in_main" type="string"></item>
+    <item name="actionbar_logo" type="drawable">@null</item>
+    <item name="description_choose_account" type="string"></item>
+
+</resources>

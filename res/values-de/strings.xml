@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="description_add_account">Konto hinzufügen</string>
+
+    <!-- login -->
+    <string name="empty_accounts">Es stehen keine Google-Konten zur Verfügung. Fügen Sie ein Konto hinzu, um fortzufahren.</string>
+    <string name="no_connection_cant_login">Kann nicht anmelden. Prüfen Sie Ihren Netzwerkanschluss.</string>
+
+</resources>

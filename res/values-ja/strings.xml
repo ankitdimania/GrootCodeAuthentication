@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="description_add_account">アカウントを追加する</string>
+
+    <!-- login -->
+    <string name="empty_accounts">Googleのアカウントが用意されていません。アカウントを追加し手、継続して下さい。</string>
+    <string name="no_connection_cant_login">サインインが出来ません。ネットワーク接続を確認して下さい。</string>
+
+</resources>

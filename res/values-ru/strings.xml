@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="description_add_account">Добавить учетную запись</string>
+
+    <!-- login -->
+    <string name="empty_accounts">Учетные записи Google отсутствуют. Добавьте учетную запись, чтобы продолжить.</string>
+    <string name="no_connection_cant_login">Вход не выполнен. Проверьте подключение к сети.</string>
+
+</resources>

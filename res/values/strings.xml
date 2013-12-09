@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="description_add_account">Add account</string>
+
+    <!-- login -->
+    <string name="empty_accounts">No Google accounts are available. Add an account to continue.</string>
+    <string name="no_connection_cant_login">Can\'t sign in. Check your network connection.</string>
+
+</resources>
