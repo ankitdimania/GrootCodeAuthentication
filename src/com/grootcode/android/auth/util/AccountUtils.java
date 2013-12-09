@@ -24,7 +24,7 @@ import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.auth.UserRecoverableNotifiedException;
 import com.google.android.gms.common.Scopes;
 import com.grootcode.android.auth.ui.AccountActivity;
-import com.grootcode.base.util.ContractUtils;
+import com.grootcode.android.provider.GrootCodeContractBase;
 
 /**
  * declare AccountActivity in Manifest.xml
@@ -68,7 +68,6 @@ public class AccountUtils {
     public static final String AUTH_SCOPES[] = {
             Scopes.PLUS_LOGIN,
             "https://www.googleapis.com/auth/userinfo.email",
-            "https://www.googleapis.com/auth/developerssite",
     };
 
     static final String AUTH_TOKEN_TYPE;
@@ -136,7 +135,8 @@ public class AccountUtils {
 
     public static void refreshAuthToken(Context mContext) {
         invalidateAuthToken(mContext);
-        tryAuthenticateWithErrorNotification(mContext, ContractUtils.CONTENT_AUTHORITY, getChosenAccountName(mContext));
+        tryAuthenticateWithErrorNotification(mContext, GrootCodeContractBase.CONTENT_AUTHORITY,
+                getChosenAccountName(mContext));
     }
 
     public static interface AuthenticateCallback {
@@ -231,7 +231,7 @@ public class AccountUtils {
         // Remove remaining application state
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().clear().commit();
-        context.getContentResolver().delete(ContractUtils.BASE_CONTENT_URI, null, null);
+        context.getContentResolver().delete(GrootCodeContractBase.BASE_CONTENT_URI, null, null);
     }
 
     public static void startAuthenticationFlow(final Context context, final Intent finishIntent) {

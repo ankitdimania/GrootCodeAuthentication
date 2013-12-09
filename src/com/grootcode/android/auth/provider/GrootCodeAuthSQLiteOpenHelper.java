@@ -10,14 +10,14 @@ import android.content.Context;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 
 import com.grootcode.android.auth.util.AccountUtils;
+import com.grootcode.android.provider.GrootCodeContractBase;
+import com.grootcode.android.provider.GrootCodeSQLiteOpenHelper;
 import com.grootcode.base.sync.SyncHelper;
-import com.grootcode.base.util.ContractUtils;
 
-public abstract class GrootCodeAuthSQLiteOpenHelper extends SQLiteOpenHelper {
+public abstract class GrootCodeAuthSQLiteOpenHelper extends GrootCodeSQLiteOpenHelper {
     private static final String TAG = makeLogTag(GrootCodeAuthSQLiteOpenHelper.class);
 
     private final Context mContext;
@@ -42,7 +42,7 @@ public abstract class GrootCodeAuthSQLiteOpenHelper extends SQLiteOpenHelper {
         Account account = AccountUtils.getChosenAccount(mContext);
         if (account != null) {
             LOGI(TAG, "Cancelling any pending syncs for for account");
-            ContentResolver.cancelSync(account, ContractUtils.CONTENT_AUTHORITY);
+            ContentResolver.cancelSync(account, GrootCodeContractBase.CONTENT_AUTHORITY);
         }
 
         onUpgradeInternal(db, oldVersion, newVersion);

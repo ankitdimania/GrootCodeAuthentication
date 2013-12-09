@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.grootcode.android.auth.util.AccountUtils;
-import com.grootcode.base.util.ContractUtils;
+import com.grootcode.android.provider.GrootCodeContractBase;
 
 /**
  * A simple {@link BroadcastReceiver} that triggers a sync. This is used by the GCM code to trigger
@@ -22,7 +22,7 @@ public class TriggerSyncReceiver extends BroadcastReceiver {
             return;
         }
 
-        ContentResolver.requestSync(AccountUtils.getChosenAccount(context), ContractUtils.CONTENT_AUTHORITY,
+        ContentResolver.requestSync(AccountUtils.getChosenAccount(context), GrootCodeContractBase.CONTENT_AUTHORITY,
                 new Bundle());
     }
 }

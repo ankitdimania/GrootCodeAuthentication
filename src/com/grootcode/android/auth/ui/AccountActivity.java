@@ -36,10 +36,10 @@ import com.google.android.gms.plus.PlusClient;
 import com.google.android.gms.plus.model.people.PersonBuffer;
 import com.grootcode.android.auth.R;
 import com.grootcode.android.auth.util.AccountUtils;
+import com.grootcode.android.provider.GrootCodeContractBase;
 import com.grootcode.android.ui.ProgressFragment;
 import com.grootcode.android.util.NetUtils;
 import com.grootcode.base.sync.SyncHelper;
-import com.grootcode.base.util.ContractUtils;
 import com.grootcode.roboguice.activity.RoboActionBarActivity;
 
 public class AccountActivity extends RoboActionBarActivity implements AccountUtils.AuthenticateCallback,
@@ -377,7 +377,7 @@ public class AccountActivity extends RoboActionBarActivity implements AccountUti
             if (position == mAccountListAdapter.getCount() - 1) {
                 Intent addAccountIntent = new Intent(Settings.ACTION_ADD_ACCOUNT);
                 addAccountIntent.putExtra(Settings.EXTRA_AUTHORITIES, new String[] {
-                    ContractUtils.CONTENT_AUTHORITY
+                    GrootCodeContractBase.CONTENT_AUTHORITY
                 });
                 startActivity(addAccountIntent);
                 return;
@@ -471,8 +471,8 @@ public class AccountActivity extends RoboActionBarActivity implements AccountUti
 
     private void finishSetup() {
         SyncHelper.requestManualSync(mChosenAccount);
-        ContentResolver.setIsSyncable(mChosenAccount, ContractUtils.CONTENT_AUTHORITY, 1);
-        ContentResolver.setSyncAutomatically(mChosenAccount, ContractUtils.CONTENT_AUTHORITY, true);
+        ContentResolver.setIsSyncable(mChosenAccount, GrootCodeContractBase.CONTENT_AUTHORITY, 1);
+        ContentResolver.setSyncAutomatically(mChosenAccount, GrootCodeContractBase.CONTENT_AUTHORITY, true);
 
         if (mFinishIntent != null) {
             // Ensure the finish intent is unique within the task. Otherwise, if the task was
