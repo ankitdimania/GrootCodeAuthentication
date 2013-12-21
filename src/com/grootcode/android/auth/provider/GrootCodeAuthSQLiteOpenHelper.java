@@ -15,23 +15,19 @@ import android.os.Build;
 import com.grootcode.android.auth.util.AccountUtils;
 import com.grootcode.android.provider.GrootCodeContractBase;
 import com.grootcode.android.provider.GrootCodeSQLiteOpenHelper;
-import com.grootcode.base.sync.SyncHelper;
+import com.grootcode.android.sync.SyncHelper;
 
 public abstract class GrootCodeAuthSQLiteOpenHelper extends GrootCodeSQLiteOpenHelper {
     private static final String TAG = makeLogTag(GrootCodeAuthSQLiteOpenHelper.class);
 
-    private final Context mContext;
-
     public GrootCodeAuthSQLiteOpenHelper(Context context, String name, CursorFactory factory, int version) {
         super(context, name, factory, version);
-        mContext = context;
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public GrootCodeAuthSQLiteOpenHelper(Context context, String name, CursorFactory factory, int version,
             DatabaseErrorHandler errorHandler) {
         super(context, name, factory, version, errorHandler);
-        mContext = context;
     }
 
     @Override

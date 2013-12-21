@@ -37,9 +37,9 @@ import com.google.android.gms.plus.model.people.PersonBuffer;
 import com.grootcode.android.auth.R;
 import com.grootcode.android.auth.util.AccountUtils;
 import com.grootcode.android.provider.GrootCodeContractBase;
+import com.grootcode.android.sync.SyncHelper;
 import com.grootcode.android.ui.ProgressFragment;
 import com.grootcode.android.util.NetUtils;
-import com.grootcode.base.sync.SyncHelper;
 import com.grootcode.roboguice.activity.RoboActionBarActivity;
 
 public class AccountActivity extends RoboActionBarActivity implements AccountUtils.AuthenticateCallback,
